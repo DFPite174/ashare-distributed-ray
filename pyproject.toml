@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ashare-distributed-ray"
+version = "1.0.0"
+description = "A-Share Distributed Multi-Tenant Computing Engine with Ray, PyArrow Zero-Copy Shared Memory, and DuckDB"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Quantitative Platform Team", email = "research@quant-platform.org"}
+]
+dependencies = [
+    "numpy>=1.23,<2.6",
+    "pandas>=2.0,<3.0",
+    "pyarrow>=15.0",
+    "duckdb>=0.10",
+    "ray>=2.10",
+    "pydantic>=2.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::FutureWarning",
+]
